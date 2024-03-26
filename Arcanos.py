@@ -38,7 +38,13 @@ def tarot_arcana(day_of_birth):
     # Devolver el significado del arcano del tarot
     return arcana_meanings.get(arcana, "Arcano desconocido")
 
-# Ejemplo de uso:
-day_of_birth = 28  # Reemplazar con el día real de nacimiento
-arcana_name = tarot_arcana(day_of_birth)
-print(f"El arcano mayor del tarot para alguien nacido el día {day_of_birth} es {arcana_name}.")
+# Solicitar al usuario que ingrese su día de nacimiento
+try:
+    day_of_birth = int(input("Por favor, ingresa tu día de nacimiento (1 a 31): "))
+    if 1 <= day_of_birth <= 31:
+        arcana_name = tarot_arcana(day_of_birth)
+        print(f"El arcano mayor del tarot para alguien nacido el día {day_of_birth} es {arcana_name}.")
+    else:
+        print("El día ingresado no es válido. Por favor, ingresa un número entre 1 y 31.")
+except ValueError:
+    print("Por favor, ingresa un número válido.")
