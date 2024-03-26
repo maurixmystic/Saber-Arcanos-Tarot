@@ -9,10 +9,36 @@ def tarot_arcana(day_of_birth):
         # Si el día de nacimiento es menor que 23, corresponde directamente al arcano del tarot
         arcana = day_of_birth % 22
 
-    # Devolver el arcano del tarot
-    return arcana
+    # Diccionario de arcanos mayores y sus significados
+    arcana_meanings = {
+        1: "El Mago",
+        2: "La Sacerdotisa",
+        3: "La Emperatriz",
+        4: "El Emperador",
+        5: "El Hierofante",
+        6: "Los Enamorados",
+        7: "El Carro",
+        8: "La Justicia",
+        9: "El Ermitaño",
+        10: "La Rueda de la Fortuna",
+        11: "La Fuerza",
+        12: "El Colgado",
+        13: "La Muerte",
+        14: "La Templanza",
+        15: "El Diablo",
+        16: "La Torre",
+        17: "La Estrella",
+        18: "La Luna",
+        19: "El Sol",
+        20: "El Juicio",
+        21: "El Mundo",
+        0: "El Loco"  # El arcano 0 es El Loco
+    }
+
+    # Devolver el significado del arcano del tarot
+    return arcana_meanings.get(arcana, "Arcano desconocido")
 
 # Ejemplo de uso:
-day_of_birth = 1  # Reemplazar con el día real de nacimiento
-arcana = tarot_arcana(day_of_birth)
-print(f"El arcano mayor del tarot para alguien nacido el día {day_of_birth} es el número {arcana}.")
+day_of_birth = 28  # Reemplazar con el día real de nacimiento
+arcana_name = tarot_arcana(day_of_birth)
+print(f"El arcano mayor del tarot para alguien nacido el día {day_of_birth} es {arcana_name}.")
